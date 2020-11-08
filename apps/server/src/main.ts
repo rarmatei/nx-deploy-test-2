@@ -10,6 +10,8 @@ const app = express();
 
 app.use(cors());
 
+debugger;
+
 app.get('/api', (req, res) => {
   res.send({ message: 'Welcome to server3!' });
 });
