@@ -1,5 +1,5 @@
 {
-  "npmScope": "nx-workshop-day2",
+  "npmScope": "nx-workshop-day22",
   "affected": {
     "defaultBase": "main"
   },
@@ -18,11 +18,16 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "accessToken": "YTFmYjExMGMtYzkwOC00MjcyLTgxMzgtNzMwMDA1MDRjYjg5fHJlYWQtd3JpdGU=",
-        "cacheableOperations": ["build", "test", "lint", "e2e"],
-        "scan": true,
+        "accessToken": "ZTlmM2UxZDItZDM2Zi00OTcyLWEyMDUtMzdhMzk5Mzg3N2MwfHJlYWQtd3JpdGU=",
+        "cacheableOperations": [
+          "build",
+          "test",
+          "lint",
+          "e2e"
+        ],
         "canTrackAnalytics": false,
-        "showUsageWarnings": true
+        "showUsageWarnings": true,
+        "url": "https://16abe1a1939d.ngrok.io"
       }
     }
   },
@@ -35,7 +40,9 @@
     },
     "bg-hoard-e2e": {
       "tags": [],
-      "implicitDependencies": ["bg-hoard"]
+      "implicitDependencies": [
+        "bg-hoard"
+      ]
     },
     "server": {
       "tags": []
