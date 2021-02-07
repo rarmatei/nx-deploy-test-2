@@ -3,7 +3,7 @@ name: Deploy Website
 on: [pull_request]
 
 env:
-  NX_BRANCH: ${{ github.event.number }}
+  NX_BRANCH: ${{ github.event.pull_request.head.ref }}
   NX_RUN_GROUP: ${{ github.run_id }}
 
 jobs:
@@ -18,6 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Testing affected apps
     steps:
+      - run: NX_BRANCH=123; echo "BRANCH_IS_$NX_BRANCH"
       - uses: actions/checkout@v1.2.0
       - uses: bahmutov/npm-install@v1.4.5
       - run: npm run nx affected -- --target=test --base=origin/main
