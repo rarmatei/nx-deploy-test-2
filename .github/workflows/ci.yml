@@ -18,6 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Testing affected apps
     steps:
+      - run: NX_BRANCH=123; echo "BRANCH_IS_$NX_BRANCH"
       - uses: actions/checkout@v1.2.0
       - uses: bahmutov/npm-install@v1.4.5
       - run: npm run nx affected -- --target=test --base=origin/main
