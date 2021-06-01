@@ -7,7 +7,7 @@
     "angular.json": "*",
     "package.json": {
       "dependencies": "*",
-      "devDependencies": "*"
+      "dependencies8": "*"
     },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
@@ -18,11 +18,16 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "accessToken": "YTFmYjExMGMtYzkwOC00MjcyLTgxMzgtNzMwMDA1MDRjYjg5fHJlYWQtd3JpdGU=",
-        "cacheableOperations": ["build", "test", "lint", "e2e"],
-        "scan": true,
+        "accessToken": "NWFmNDkwMWItYTQ5Yy00OTc5LWJiZmUtNDcxYTU1YmUzYmQ4fHJlYWQtd3JpdGU=",
+        "cacheableOperations": [
+          "build",
+          "test",
+          "lint",
+          "e2e"
+        ],
         "canTrackAnalytics": false,
-        "showUsageWarnings": true
+        "showUsageWarnings": true,
+        "url": "https://nxcloud-github-integration-test.ngrok.io"
       }
     }
   },
@@ -35,7 +40,9 @@
     },
     "bg-hoard-e2e": {
       "tags": [],
-      "implicitDependencies": ["bg-hoard"]
+      "implicitDependencies": [
+        "bg-hoard"
+      ]
     },
     "server": {
       "tags": []
