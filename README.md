@@ -1,4 +1,4 @@
-# NxWorkshopDay2
+# Nx Workshop Day 2
 
 This project was generated using [Nx](https://nx.dev).
 
