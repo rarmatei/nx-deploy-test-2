@@ -18,11 +18,16 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "accessToken": "YTFmYjExMGMtYzkwOC00MjcyLTgxMzgtNzMwMDA1MDRjYjg5fHJlYWQtd3JpdGU=",
-        "cacheableOperations": ["build", "test", "lint", "e2e"],
-        "scan": true,
+        "accessToken": "MTU4MjI1ZmEtMzZjMS00MGNmLWFiZjgtNTBkMjhjMDYzMTI3fHJlYWQtd3JpdGU=",
+        "cacheableOperations": [
+          "build",
+          "test",
+          "lint",
+          "e2e"
+        ],
         "canTrackAnalytics": false,
-        "showUsageWarnings": true
+        "showUsageWarnings": true,
+        "url": "http://localhost:4203"
       }
     }
   },
@@ -35,7 +40,9 @@
     },
     "bg-hoard-e2e": {
       "tags": [],
-      "implicitDependencies": ["bg-hoard"]
+      "implicitDependencies": [
+        "bg-hoard"
+      ]
     },
     "server": {
       "tags": []
