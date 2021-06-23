@@ -27,7 +27,7 @@
         ],
         "canTrackAnalytics": false,
         "showUsageWarnings": true,
-        "url": "http://localhost:4203"
+        "url": "https://nxcloud-github-integration-test.ngrok.io"
       }
     }
   },
