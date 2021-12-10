@@ -1,5 +1,5 @@
 {
-  "npmScope": "nx-workshop-day4",
+  "npmScope": "nx-workshop-day2",
   "affected": {
     "defaultBase": "main"
   },
@@ -19,7 +19,7 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "accessToken": "NWFmNDkwMWItYTQ5Yy00OTc5LWJiZmUtNDcxYTU1YmUzYmQ4fHJlYWQtd3JpdGU=",
+        "accessToken": "ZjhiY2UwOGMtY2EwYS00N2ZmLTkyZGQtY2I0ODg3Mjk0NmNjfHJlYWQtd3JpdGU=",
         "cacheableOperations": [
           "build",
           "test",
@@ -28,25 +28,41 @@
         ],
         "canTrackAnalytics": false,
         "showUsageWarnings": true,
-        "url": "https://nxcloud-github-integration-test.ngrok.io"
+        "url": "http://nxcloud-github-integration-test.ngrok.io",
+        "parallel": 1
       }
     }
   },
-  "projects": {
-    "api": {
-      "tags": []
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "defaultProject": "bg-hoard",
+  "generators": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
     },
-    "bg-hoard": {
-      "tags": []
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
     },
-    "bg-hoard-e2e": {
-      "tags": [],
-      "implicitDependencies": [
-        "bg-hoard"
-      ]
-    },
-    "server": {
-      "tags": []
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
     }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
   }
 }
