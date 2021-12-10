@@ -8,7 +8,7 @@
     "nx": "nx",
     "start": "ng serve",
     "build": "ng build",
-    "init-cloud": "NRWL_API=http://localhost:4203 nx g @nrwl/nx-cloud:init",
+    "init-cloud": "NRWL_API=http://nxcloud-github-integration-test.ngrok.io nx g @nrwl/nx-cloud:init",
     "test": "ng test",
     "lint": "nx workspace-lint && ng lint",
     "e2e": "ng e2e",
