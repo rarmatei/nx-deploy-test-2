@@ -28,25 +28,41 @@
         ],
         "canTrackAnalytics": false,
         "showUsageWarnings": true,
-        "url": "http://localhost:4203"
+        "url": "http://localhost:4203",
+        "parallel": 1
       }
     }
   },
-  "projects": {
-    "api": {
-      "tags": []
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "defaultProject": "bg-hoard",
+  "generators": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
     },
-    "bg-hoard": {
-      "tags": []
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
     },
-    "bg-hoard-e2e": {
-      "tags": [],
-      "implicitDependencies": [
-        "bg-hoard"
-      ]
-    },
-    "server": {
-      "tags": []
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
     }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
   }
 }
