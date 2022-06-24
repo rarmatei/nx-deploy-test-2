@@ -19,6 +19,7 @@ jobs:
     name: Testing affected apps
     steps:
       - uses: actions/checkout@v1.2.0
+      - run: git rev-parse HEAD
       - uses: bahmutov/npm-install@v1.4.5
       - run: npm run nx affected -- --target=test --base=origin/main
   lint:
