@@ -3,7 +3,7 @@ name: Deploy Website
 on: [pull_request]
 
 env:
-  NX_BRANCH: ${{ github.event.number }}
+  NX_BRANCH: ${{ github.event.pull_request.head.ref }}
   NX_RUN_GROUP: ${{ github.run_id }}
 
 jobs:
