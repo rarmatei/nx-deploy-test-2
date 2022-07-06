@@ -1,5 +1,5 @@
 {
-  "npmScope": "nx-workshop-day31",
+  "npmScope": "nx-workshop-day32",
   "affected": {
     "defaultBase": "main"
   },
@@ -19,7 +19,7 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "accessToken": "OWM3ZDdlMTgtMzhmMS00OGQ2LWE2N2QtNmVkMzRkMGY0MmJkfHJlYWQtd3JpdGU=",
+        "accessToken": "NWU2MTNhY2EtYTYwYS00OWY3LWFmNGUtNzU3YzY5MTliZjU0fHJlYWQtd3JpdGU=",
         "cacheableOperations": [
           "build",
           "test",
