@@ -73,6 +73,13 @@
             "passWithNoTests": true
           },
           "outputs": ["coverage/apps/api"]
+        },
+        "long-delay": {
+          "builder": "@nrwl/workspace:run-commands",
+          "outputs": [],
+          "options": {
+            "command": "sleep 60 && echo \"hello\""
+          }
         }
       },
       "tags": []
