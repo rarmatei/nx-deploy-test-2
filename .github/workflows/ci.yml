@@ -52,8 +52,9 @@ jobs:
            for pid in "${pids[@]}"; do
              wait "$pid"
            done
-      - run: npx nx-cloud stop-all-agents
-          if: ${{ always() }}
+      - name: Stop all running agents for this CI run
+        if: ${{ always() }}
+        run: npx nx-cloud stop-all-agents
   agent1:
     runs-on: ubuntu-latest
     name: Agent
