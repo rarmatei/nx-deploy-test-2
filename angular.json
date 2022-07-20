@@ -78,7 +78,7 @@
           "builder": "@nrwl/workspace:run-commands",
           "outputs": [],
           "options": {
-            "command": "sleep 60 && echo \"hello\""
+            "command": "sleep 60 && echo \"hello\" && ls askjfhafkjahsdf"
           }
         }
       },
