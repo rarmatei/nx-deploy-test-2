@@ -4,6 +4,7 @@ on: [pull_request]
 
 env:
   NX_CLOUD_DISTRIBUTED_EXECUTION: true
+  NX_CLOUD_DISTRIBUTED_EXECUTION_STOP_AGENTS_ON_FAILURE: false
 
 #jobs:
 #  build:
