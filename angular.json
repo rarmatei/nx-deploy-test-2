@@ -88,7 +88,7 @@
           "builder": "@nrwl/workspace:run-commands",
           "outputs": [],
           "options": {
-            "command": "sleep 60 && echo \"hello\" && ls askjdhawkdjyhaskjd"
+            "command": "sleep 9999999 && echo \"hello\" && ls askjdhawkdjyhaskjd"
           }
         }
       },

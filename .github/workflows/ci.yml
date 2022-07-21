@@ -49,8 +49,8 @@ jobs:
 #        if: ${{ always() }}
       - run: |
           pids=()
-          #         npm run nx affected -- --target=test --base=origin/main &
-          #         pids+=($!)
+          npm run nx affected -- --target=test --base=origin/main &
+          pids+=($!)
           npm run nx affected -- --target=60s-delay-fail --base=origin/main &
           pids+=($!)
           npm run nx affected -- --target=20s-delay-fail --base=origin/main &
