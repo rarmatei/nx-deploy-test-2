@@ -37,31 +37,25 @@ jobs:
       - uses: actions/checkout@v1.2.0
       - uses: bahmutov/npm-install@v1.4.5
       - run: npx nx-cloud start-ci-run
-      - run: npm run nx affected -- --target=build --base=origin/main
-        if: ${{ always() }}
-      - run: npm run nx affected -- --target=test --base=origin/main
-        if: ${{ always() }}
-      - run: npm run nx affected -- --target=lint --base=origin/main
-        if: ${{ always() }}
-      - run: npm run nx affected -- --target=e2e --base=origin/main
-        if: ${{ always() }}
-      - run: npm run nx affected -- --target=long-delay --base=origin/main
-        if: ${{ always() }}
-      #      - run: |
-#          pids=()
-#           npm run nx affected -- --target=build --base=origin/main &
-#           pids+=($!)
-#           npm run nx affected -- --target=test --base=origin/main &
-#           pids+=($!)
-#           ynpm run nx affected -- --target=lint --base=origin/main &
-#           pids+=($!)
-#           npm run nx affected -- --target=e2e --base=origin/main &
-#          pids+=($!)
-#           npm run nx affected -- --target=long-delay --base=origin/main &
-#           pids+=($!)
-#           for pid in "${pids[@]}"; do
-#             wait "$pid"
-#           done
+#      - run: npm run nx affected -- --target=build --base=origin/main
+#        if: ${{ always() }}
+#      - run: npm run nx affected -- --target=test --base=origin/main
+#        if: ${{ always() }}
+#      - run: npm run nx affected -- --target=lint --base=origin/main
+#        if: ${{ always() }}
+#      - run: npm run nx affected -- --target=e2e --base=origin/main
+#        if: ${{ always() }}
+#      - run: npm run nx affected -- --target=long-delay --base=origin/main
+#        if: ${{ always() }}
+        - run: |
+           pids=()
+           npm run nx affected -- --target=60s-delay-okay --base=origin/main &
+           pids+=($!)
+           npm run nx affected -- --target=20s-delay-fail --base=origin/main &
+           pids+=($!)
+           for pid in "${pids[@]}"; do
+             wait "$pid"
+           done
       - name: Stop all running agents for this CI run
         if: ${{ always() }}
         run: npx nx-cloud stop-all-agents

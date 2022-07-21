@@ -74,11 +74,18 @@
           },
           "outputs": ["coverage/apps/api"]
         },
-        "long-delay": {
+        "20s-delay-fail": {
           "builder": "@nrwl/workspace:run-commands",
           "outputs": [],
           "options": {
-            "command": "sleep 60 && echo \"hello\" && ls askjfhafkjahsdf"
+            "command": "sleep 20 && echo \"hello\" && ls askjfhafkjahsdf"
+          }
+        },
+        "60s-delay-okay": {
+          "builder": "@nrwl/workspace:run-commands",
+          "outputs": [],
+          "options": {
+            "command": "sleep 60 && echo \"hello\" && ls ./"
           }
         }
       },
