@@ -1,4 +1,5 @@
-module.exports = {
+/* eslint-disable */
+export default {
   displayName: 'bg-hoard',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
@@ -6,14 +7,14 @@ module.exports = {
     'ts-jest': {
       stringifyContentPathRegex: '\\.(html|svg)$',
 
-      tsconfig: '<rootDir>/tsconfig.spec.json',
-    },
+      tsconfig: '<rootDir>/tsconfig.spec.json'
+    }
   },
   coverageDirectory: '../../coverage/apps/bg-hoard',
   snapshotSerializers: [
     'jest-preset-angular/build/serializers/no-ng-attributes',
     'jest-preset-angular/build/serializers/ng-snapshot',
-    'jest-preset-angular/build/serializers/html-comment',
+    'jest-preset-angular/build/serializers/html-comment'
   ],
-  transform: { '^.+\\.(ts|js|html)$': 'jest-preset-angular' },
+  transform: { '^.+\\.(ts|js|html)$': 'jest-preset-angular' }
 };
