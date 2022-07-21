@@ -28,10 +28,10 @@ concurrency:
 #    with:
 #      number-of-agents: 4
 
-#env:
-#  NX_CLOUD_DISTRIBUTED_EXECUTION: true
-#  NX_CLOUD_DISTRIBUTED_EXECUTION_STOP_AGENTS_ON_FAILURE: false
-#  NX_VERBOSE_LOGGING: true
+env:
+  NX_CLOUD_DISTRIBUTED_EXECUTION: true
+  NX_CLOUD_DISTRIBUTED_EXECUTION_STOP_AGENTS_ON_FAILURE: false
+  NX_VERBOSE_LOGGING: true
 
 jobs:
   build:
@@ -41,16 +41,6 @@ jobs:
       - uses: actions/checkout@v1.2.0
       - uses: bahmutov/npm-install@v1.4.5
       - run: npx nx-cloud start-ci-run
-      #      - run: npm run nx affected -- --target=build --base=origin/main
-#        if: ${{ always() }}
-#      - run: npm run nx affected -- --target=test --base=origin/main
-#        if: ${{ always() }}
-#      - run: npm run nx affected -- --target=lint --base=origin/main
-#        if: ${{ always() }}
-#      - run: npm run nx affected -- --target=e2e --base=origin/main
-#        if: ${{ always() }}
-#      - run: npm run nx affected -- --target=long-delay --base=origin/main
-#        if: ${{ always() }}
       - run: |
           FAIL=0
 
@@ -74,47 +64,47 @@ jobs:
           else
           echo "FAIL! ($FAIL)"
           fi
-#          pids=()
-#          # npm run nx affected -- --target=test --base=origin/main &
-#          # pids+=($!)
-#          npm run nx affected -- --target=60s-delay-fail --base=origin/main &
-#          pids+=($!)
-#          npm run nx affected -- --target=20s-delay-fail --base=origin/main &
-#          pids+=($!)
-#          for pid in "${pids[@]}"; do
-#          wait "$pid"
-#          done
-#      - name: Stop all running agents for this CI run
-#        if: ${{ always() }}
-#        run: npx nx-cloud stop-all-agents
-#  agent1:
-#    runs-on: ubuntu-latest
-#    name: Agent
-#    steps:
-#      - uses: actions/checkout@v1.2.0
-#      - uses: bahmutov/npm-install@v1.4.5
-#      - run: npx nx-cloud start-agent
-#
-#  agent2:
-#    runs-on: ubuntu-latest
-#    name: Agent
-#    steps:
-#      - uses: actions/checkout@v1.2.0
-#      - uses: bahmutov/npm-install@v1.4.5
-#      - run: npx nx-cloud start-agent
-#
-#  agent3:
-#    runs-on: ubuntu-latest
-#    name: Agent
-#    steps:
-#      - uses: actions/checkout@v1.2.0
-#      - uses: bahmutov/npm-install@v1.4.5
-#      - run: npx nx-cloud start-agent
-#
-#  agent4:
-#    runs-on: ubuntu-latest
-#    name: Agent
-#    steps:
-#      - uses: actions/checkout@v1.2.0
-#      - uses: bahmutov/npm-install@v1.4.5
-#      - run: npx nx-cloud start-agent
+      #          pids=()
+      #          # npm run nx affected -- --target=test --base=origin/main &
+      #          # pids+=($!)
+      #          npm run nx affected -- --target=60s-delay-fail --base=origin/main &
+      #          pids+=($!)
+      #          npm run nx affected -- --target=20s-delay-fail --base=origin/main &
+      #          pids+=($!)
+      #          for pid in "${pids[@]}"; do
+      #          wait "$pid"
+      #          done
+      - name: Stop all running agents for this CI run
+        if: ${{ always() }}
+        run: npx nx-cloud stop-all-agents
+  agent1:
+    runs-on: ubuntu-latest
+    name: Agent
+    steps:
+      - uses: actions/checkout@v1.2.0
+      - uses: bahmutov/npm-install@v1.4.5
+      - run: npx nx-cloud start-agent
+
+  agent2:
+    runs-on: ubuntu-latest
+    name: Agent
+    steps:
+      - uses: actions/checkout@v1.2.0
+      - uses: bahmutov/npm-install@v1.4.5
+      - run: npx nx-cloud start-agent
+
+  agent3:
+    runs-on: ubuntu-latest
+    name: Agent
+    steps:
+      - uses: actions/checkout@v1.2.0
+      - uses: bahmutov/npm-install@v1.4.5
+      - run: npx nx-cloud start-agent
+
+  agent4:
+    runs-on: ubuntu-latest
+    name: Agent
+    steps:
+      - uses: actions/checkout@v1.2.0
+      - uses: bahmutov/npm-install@v1.4.5
+      - run: npx nx-cloud start-agent
