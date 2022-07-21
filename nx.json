@@ -27,6 +27,7 @@
           "e2e",
           "long-delay",
           "60s-delay-okay",
+          "60s-delay-fail",
           "20s-delay-fail"
         ],
         "canTrackAnalytics": false,
