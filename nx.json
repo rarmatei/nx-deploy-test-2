@@ -25,7 +25,9 @@
           "test",
           "lint",
           "e2e",
-          "long-delay"
+          "long-delay",
+          "60s-delay-okay",
+          "20s-delay-fail"
         ],
         "canTrackAnalytics": false,
         "showUsageWarnings": true,
