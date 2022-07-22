@@ -44,9 +44,9 @@ jobs:
 
         echo "starting"
 
-        npm run nx affected -- --target=test --base=origin/main --skip-nx-cache &
-        npm run nx affected -- --target=60s-delay-fail --base=origin/main &
-        npm run nx affected -- --target=20s-delay-fail --base=origin/main &
+        npx nx affected --target=test --base=origin/main --skip-nx-cache &
+        npx nx affected --target=60s-delay-fail --base=origin/main &
+        npx nx affected --target=20s-delay-fail --base=origin/main &
 
         for job in `jobs -p`
         do
