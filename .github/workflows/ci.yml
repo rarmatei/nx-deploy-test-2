@@ -15,12 +15,16 @@ jobs:
       - uses: bahmutov/npm-install@v1.4.5
       - run: |
           pids=()
+
           npx nx affected --target=test --base=origin/main &
           pids+=($!)
+
           npx nx affected --target=60s-delay-fail --base=origin/main &
           pids+=($!)
+
           npx nx affected --target=20s-delay-fail --base=origin/main &
           pids+=($!)
+
           for pid in "${pids[@]}"; do
-          wait "$pid"
+            wait "$pid"
           done
