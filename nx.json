@@ -1,5 +1,5 @@
 {
-  "npmScope": "nx-workshop-da2",
+  "npmScope": "nx-workshop-da3",
   "affected": {
     "defaultBase": "main"
   },
@@ -20,7 +20,7 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "accessToken": "MjIzNDk3NzAtMjg4My00YTI5LTk2MTQtODViMWYxNjlhZjNmfHJlYWQtd3JpdGU=",
+        "accessToken": "MDQwYjc1NDMtN2JhNi00OTAyLWFlZDEtNjc4ZmY3ZjY0ZTUyfHJlYWQtd3JpdGU=",
         "cacheableOperations": [
           "build",
           "test",
@@ -33,6 +33,7 @@
         ],
         "canTrackAnalytics": false,
         "showUsageWarnings": true,
+        "url": "https://nxcloud-github-integration-test.ngrok.io",
         "parallel": 1
       }
     }
