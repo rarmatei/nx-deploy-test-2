@@ -13,14 +13,27 @@ jobs:
     steps:
       - uses: actions/checkout@v1.2.0
       - uses: bahmutov/npm-install@v1.4.5
+      - run: npx nx-cloud start-ci-run
       - run: |
-          pids=()
-          npx nx affected --target=test --base=origin/main &
-          pids+=($!)
+          FAIL=0
+
+          echo "starting"
+
+          npx nx affected --target=test --base=origin/main --skip-nx-cache &
           npx nx affected --target=60s-delay-fail --base=origin/main &
-          pids+=($!)
           npx nx affected --target=20s-delay-fail --base=origin/main &
-          pids+=($!)
-          for pid in "${pids[@]}"; do
-          wait "$pid"
+
+          for job in `jobs -p`
+          do
+            echo $job
+            wait $job || let "FAIL+=1"
           done
+
+          echo $FAIL
+
+          if [ "$FAIL" == "0" ];
+          then
+            echo "success"
+          else
+            echo "failure ($FAIL)"
+          fi
