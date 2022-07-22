@@ -20,7 +20,7 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "accessToken": "ZWUyZGQxZmEtZGVlNi00NGYyLWE5NjktODk0Y2U3N2UyZWY1fHJlYWQtd3JpdGU=",
+        "accessToken": "MjIzNDk3NzAtMjg4My00YTI5LTk2MTQtODViMWYxNjlhZjNmfHJlYWQtd3JpdGU=",
         "cacheableOperations": [
           "build",
           "test",
@@ -33,7 +33,6 @@
         ],
         "canTrackAnalytics": false,
         "showUsageWarnings": true,
-        "url": "https://nxcloud-github-integration-test.ngrok.io",
         "parallel": 1
       }
     }
