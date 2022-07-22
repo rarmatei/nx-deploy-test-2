@@ -7,21 +7,20 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  main:
-    name: Nx Cloud - Main Job
-    uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.6
-    with:
-      number-of-agents: 4
-      environment-variables: |
-        NX_CLOUD_DISTRIBUTED_EXECUTION_STOP_AGENTS_ON_FAILURE=false
-        NX_VERBOSE_LOGGING=true
-      parallel-commands-on-agents: |
-        npm run nx affected -- --target=test --base=origin/main --skip-nx-cache
-        npm run nx affected -- --target=60s-delay-fail --base=origin/main
-        npm run nx affected -- --target=20s-delay-fail --base=origin/main
-
-  agents:
-    name: Nx Cloud - Agents
-    uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.6
-    with:
-      number-of-agents: 4
+  build:
+    runs-on: ubuntu-latest
+    name: Building affected apps
+    steps:
+      - uses: actions/checkout@v1.2.0
+      - uses: bahmutov/npm-install@v1.4.5
+      - run: |
+          pids=()
+          npx nx affected --target=test --base=origin/main &
+          pids+=($!)
+          npx nx affected --target=60s-delay-fail --base=origin/main &
+          pids+=($!)
+          npx nx affected --target=20s-delay-fail --base=origin/main &
+          pids+=($!)
+          for pid in "${pids[@]}"; do
+          wait "$pid"
+          done
