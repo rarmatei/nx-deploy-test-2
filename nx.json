@@ -20,7 +20,7 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "accessToken": "YTJiYTJlMDUtOGUwMi00ZjUwLTgxMWMtZDY0OWI0ZjEyMDE4fHJlYWQ=",
+        "accessToken": "NmNkZjJjYTgtMGZkMS00YWQ5LWFhMGEtMjJlNzc0M2M4YWE3fHJlYWQ=",
         "cacheableOperations": [
           "build",
           "test",
