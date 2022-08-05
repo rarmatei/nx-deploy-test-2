@@ -1,5 +1,5 @@
 {
-  "npmScope": "nx-workshop-adadasdasd213",
+  "npmScope": "nx-workshop-adasdad11989",
   "affected": {
     "defaultBase": "main"
   },
@@ -20,7 +20,7 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "accessToken": "NmNkZjJjYTgtMGZkMS00YWQ5LWFhMGEtMjJlNzc0M2M4YWE3fHJlYWQ=",
+        "accessToken": "NDg1ZDJmMWQtZGZkMC00MmNkLThhY2UtMTg2ZGFlNTA3NzNmfHJlYWQ=",
         "cacheableOperations": [
           "build",
           "test",
